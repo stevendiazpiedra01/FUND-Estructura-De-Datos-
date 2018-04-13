@@ -1,0 +1,65 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+
+public class Problema_1 {
+	
+	
+	
+	static void print(String [] array , int tam)
+	{
+		
+		for (int i = 0 ; i < tam; i++)
+		
+			System.out.print(array[i] + " ");
+		System.out.println();
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		String l = br.readLine();
+		
+		String array [] = l.split(",");
+		int d = array.length;
+			
+		{
+			int resultado = 0;
+			int resultado2 = 0;
+			
+			for ( int  i = 0 ; i < array.length ; i ++ )
+			{
+				
+				int a = Integer.parseInt(array[i]);
+				int arrays []= new int [a];
+					
+				  for (int j = 0 ; j < arrays.length; j++)
+				  {
+					arrays[j]=a;
+					
+					System.out.println(j + " " + a);
+					
+				  }
+				  for (int j = 0 ; j < arrays.length; j++)
+				  {
+					  resultado = arrays[0];
+					  resultado2 = arrays[1];
+				  }
+				  System.out.println(resultado2 + " ");
+		    } 
+		    
+		
+		
+			
+			print(array,d);
+			
+				
+		}
+	
+	}	
+	}
+
+
