@@ -1,3 +1,5 @@
+package arreglos;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -9,55 +11,55 @@ public class Problema_1 {
 	
 	
 	
-	static void print(String [] array , int tam)
+	static void print(int [] arrays ) throws IOException
 	{
+		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		for (int i = 0 ; i < arrays.length; i++)
 		
-		for (int i = 0 ; i < tam; i++)
-		
-			System.out.print(array[i] + " ");
+		bw.write(" " + arrays[i] );
+		bw.flush();
 		System.out.println();
 	}
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+		
+		bw.write("Digite Numeros Separados Por Comas : ");
+	    bw.flush();
 		String l = br.readLine();
 		
+		bw.write("Digite Numero : ");
+		bw.flush();
+		int k = Integer.parseInt(br.readLine());
+		
 		String array [] = l.split(",");
-		int d = array.length;
-			
-		{
-			int resultado = 0;
-			int resultado2 = 0;
-			
+		int arrays []= new int [array.length];	
+		
 			for ( int  i = 0 ; i < array.length ; i ++ )
 			{
 				
-				int a = Integer.parseInt(array[i]);
-				int arrays []= new int [a];
-					
-				  for (int j = 0 ; j < arrays.length; j++)
-				  {
-					arrays[j]=a;
-					
-					System.out.println(j + " " + a);
-					
-				  }
-				  for (int j = 0 ; j < arrays.length; j++)
-				  {
-					  resultado = arrays[0];
-					  resultado2 = arrays[1];
-				  }
-				  System.out.println(resultado2 + " ");
+				 arrays[i] =Integer.parseInt(array[i]);
+				  
+			
 		    } 
 		    
-		
-		
-			
-			print(array,d);
-			
+		for (int i = 0 ; i <arrays.length ; i ++)
+		{
+			for(int j = 0 ; j < arrays.length ; j++ )
+			{
 				
+				if ( arrays[i] - arrays[j] == k)
+				{
+					bw.write(" " + i + "-" + j   );
+					bw.flush();
+				}
+			}
 		}
+		print(arrays);
+			
+			
+		
 	
 	}	
 	}
